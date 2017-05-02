@@ -20,4 +20,7 @@
     "aws-sdk": "^2.48.0",
     "eslint": "^3.19.0"
   }
+  "bin": {
+    "micromobile-lib-deploy": "backend/deploy_backend.sh"
+  }
 }
