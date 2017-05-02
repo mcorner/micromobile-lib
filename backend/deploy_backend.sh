@@ -38,7 +38,7 @@ do
   aws --profile $aws_profile lambda get-function --function-name $var
   rc=$?
   if [[ $rc != 0 ]]; then
-    aws --profile $aws_profile lambda create-function --function-name $var --runtime nodejs6.10 --role $LAMBDA_ROLE_ARN --handler index.$var --code S3Bucket=$backend_bucket,S3Key=$DEPLOY_FILE_NAME --timeout 10 --memory-size 128
+    aws --profile $aws_profile lambda create-function --function-name $var --runtime nodejs6.10 --role $lambda_role_arn --handler index.$var --code S3Bucket=$backend_bucket,S3Key=$DEPLOY_FILE_NAME --timeout 10 --memory-size 128
   else
     aws --profile $aws_profile lambda update-function-code --function-name $var --s3-bucket $backend_bucket --s3-key $DEPLOY_FILE_NAME
   fi
