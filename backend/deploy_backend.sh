@@ -1,8 +1,7 @@
 #!/bin/bash
 
 FUNCTIONS=( experimentFileResultsHandler )
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=$( readlink -f $( readlink "${BASH_SOURCE[0]}" )
 
 DEPLOY_DIR=$DIR/../temp_deploy
 DEPLOY_FILE_NAME=lambda-deploy.zip
