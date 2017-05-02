@@ -1,2 +1,2 @@
 const SyncResults = require('./sync_results');
-module.exports.SyncResults = SyncResults;
+module.exports.SyncResults = SyncResults.SyncResults;
