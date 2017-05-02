@@ -1,13 +1,19 @@
 #!/bin/bash
 
 FUNCTIONS=( experimentFileResultsHandler )
-DIR=$( readlink -f $( readlink "${BASH_SOURCE[0]}" ) )
+DIR=$( dirname -f $( greadlink -f "${BASH_SOURCE[0]}" ) )
 
 DEPLOY_DIR=$DIR/../temp_deploy
 DEPLOY_FILE_NAME=lambda-deploy.zip
 DEPLOY_FILE=$DIR/../$DEPLOY_FILE_NAME
-LAMBDA_FILES=$DIR/backend/*
+LAMBDA_FILES=$DIR/*.js
 NODE_FILES=$DIR/../node_modules
+
+if [ "$#" -ne 1 ]
+then
+  echo "ERROR: Supply config.json"
+  exit 1
+fi
 
 # Reuse the json config for the deploy
 cat $1 |$DIR/to_env.js >$DIR/env.sh
