@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FUNCTIONS=( experimentFileResultsHandler )
-DIR=$( dirname -f $( greadlink -f "${BASH_SOURCE[0]}" ) )
+DIR=$( dirname $( greadlink -f "${BASH_SOURCE[0]}" ) )
 
 DEPLOY_DIR=$DIR/../temp_deploy
 DEPLOY_FILE_NAME=lambda-deploy.zip
