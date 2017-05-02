@@ -7,7 +7,7 @@ DEPLOY_DIR=$DIR/../temp_deploy
 DEPLOY_FILE_NAME=lambda-deploy.zip
 DEPLOY_FILE=$DIR/../$DEPLOY_FILE_NAME
 LAMBDA_FILES=$DIR/*.js
-NODE_FILES=$DIR/../node_modules
+NODE_FILES=$DIR/../package.json
 
 if [ "$#" -ne 1 ]
 then
@@ -24,7 +24,7 @@ rm -rf $DEPLOY_DIR $DEPLOY_FILE
 mkdir $DEPLOY_DIR
 cd $DEPLOY_DIR
 cp -r $LAMBDA_FILES .
-cp -r $NODE_FILES .
+npm install
 zip -q -r $DEPLOY_FILE *;
 cd ..
 rm -rf $DEPLOY_DIR
