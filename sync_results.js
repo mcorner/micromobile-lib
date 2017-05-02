@@ -12,7 +12,7 @@ class SyncResults {
     this.lambda = new AWS.Lambda({region: this.region, apiVersion: '2015-03-31'});
   }
 
-  syncResults(results) {
+  sync(results) {
     var syncParams = {
       FunctionName : this.functionName,
       InvocationType : 'RequestResponse',
