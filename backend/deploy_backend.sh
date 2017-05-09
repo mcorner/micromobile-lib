@@ -26,6 +26,7 @@ mkdir $DEPLOY_DIR
 cp $CONFIG_FILE $DEPLOY_DIR
 cd $DEPLOY_DIR
 cp -r $LAMBDA_FILES .
+cp -r $NODE_FILES .
 npm install
 zip -q -r $DEPLOY_FILE *;
 cd ..

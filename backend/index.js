@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
-const config = require('../config.json');
+const config = require('./config.json');
 
 exports.experimentFileResultsHandler = function(event, context, callback) {
   const param = {Bucket: config.backend_bucket, Key: 'experiment-results/' + event.experiment_name, Body: event.data};
