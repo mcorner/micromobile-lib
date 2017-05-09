@@ -8,6 +8,7 @@ DEPLOY_FILE_NAME=lambda-deploy.zip
 DEPLOY_FILE=$DIR/../$DEPLOY_FILE_NAME
 LAMBDA_FILES=$DIR/*.js
 NODE_FILES=$DIR/../package.json
+CONFIG_FILE=./config.json
 
 if [ "$#" -ne 1 ]
 then
@@ -22,6 +23,7 @@ cat $1 |$DIR/to_env.js >$DIR/env.sh
 #Make zip
 rm -rf $DEPLOY_DIR $DEPLOY_FILE
 mkdir $DEPLOY_DIR
+cp $CONFIG_FILE $DEPLOY_DIR
 cd $DEPLOY_DIR
 cp -r $LAMBDA_FILES .
 npm install

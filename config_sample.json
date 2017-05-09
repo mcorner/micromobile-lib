@@ -1,5 +1,0 @@
-{
-  "aws_profile": "umass",
-  "backend_bucket": "micromobile-backend",
-  "lambda_role_arn": "arn:aws:iam::882712526326:role/micromobile-lambda"
-}
