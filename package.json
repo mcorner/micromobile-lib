@@ -26,5 +26,9 @@
   },
   "bin": {
     "micromobile-lib-deploy": "backend/deploy_backend.sh"
+  },
+  "browserify": {
+    "transform": [["babelify", { "presets": ["es2015"] }]]
   }
+}
 }
