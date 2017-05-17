@@ -22,12 +22,22 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0"
   },
   "bin": {
     "micromobile-lib-deploy": "backend/deploy_backend.sh"
   },
   "browserify": {
-    "transform": [["babelify", { "presets": ["es2015"] }]]
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
   }
 }
