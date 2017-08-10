@@ -1,7 +1,7 @@
 // babel-node --presets es2015 test.js
 
-import SyncResults from './lib/sync_results';
+import MicroMobile from './index';
 
-let syncResults = new SyncResults("api.adtrtwo.com", "/production/experiment/result");
+let syncResults = new MicroMobile.SyncResults("api.adtrtwo.com", "/production/experiment/result");
 
 syncResults.sync("foo");
